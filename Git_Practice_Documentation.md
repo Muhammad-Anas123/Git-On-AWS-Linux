@@ -133,6 +133,62 @@ Explanation: Useful if you make a mistake or want to change your repository loca
 
 ---
 
+## ♻️ 11. Resetting and Cleaning Working Directory
+
+### Reset hard to discard staged changes
+```bash
+git reset --hard
+```
+Explanation: Discards all staged changes and resets the working directory to the last commit.
+
+---
+
+## 🗑️ 12. Deleting Files
+
+```bash
+rm file4.java
+rm file3.css
+```
+Explanation: Deletes files from the file system (use with caution).
+
+---
+
+## ✍️ 13. Reverting Commits
+
+### Step 1: Make and commit changes
+```bash
+cat > revertfile
+# Add some content
+git add .
+git commit -m "first code commited"
+
+cat >> revertfile
+# Add more content
+git add .
+git commit -m "second code commited"
+```
+
+### Step 2: Revert a commit
+```bash
+git revert <commit-hash>
+```
+Explanation: This creates a new commit that undoes the changes made by the specified commit.
+
+---
+
+## 🧹 14. Cleaning Untracked Files
+
+```bash
+git clean -n   # Preview what will be deleted
+git clean -f   # Force delete untracked files
+```
+
+Explanation:
+- `git clean -n`: Lists untracked files that would be removed.
+- `git clean -f`: Actually removes them.
+
+---
+
 ## ✅ Conclusion
 
 This practice covers:
@@ -143,6 +199,7 @@ This practice covers:
 - Pushing/pulling changes
 - Handling commit history and logs
 - Ignoring files and remote management
+- Reverting commits and cleaning untracked files
 - Troubleshooting common Git errors
 
-Use this knowledge to manage your future projects confidently. ✅
+You're now well-equipped with both basic and advanced Git operations. Keep practicing and pushing code! ✅
